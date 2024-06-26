@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TEXT */
+
+h3 {
+    @apply text-xl font-semibold;
+}
+
+
+/* INPUT */
+input {
+   background-color: transparent;
+    outline: none;
+}
