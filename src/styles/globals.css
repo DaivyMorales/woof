@@ -10,7 +10,7 @@ h3 {
 
 /* INPUT */
 input {
-    @apply w-full; 
+  @apply w-full;
   background-color: transparent;
   outline: none;
 }

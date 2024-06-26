@@ -1,10 +1,12 @@
+import { useState } from "react";
+
 interface DataPetProps {
   question: string | undefined;
   placeholder: string | undefined;
   inputType: string | "text" | "number" | "option" | undefined;
   option?: {
-    optionOne: string ;
-    optionTwo: string ;
+    optionOne: string;
+    optionTwo: string;
   };
   type?: string | number | boolean;
   buttonText: string;
@@ -22,6 +24,9 @@ function DataPet({
   measurement,
   option,
 }: DataPetProps) {
+
+  const [optionSelected, setOptionSelected] = useState(0)
+
   return (
     <div className="flex flex-col items-center justify-center gap-3">
       <h3>{question}</h3>
@@ -48,15 +53,24 @@ function DataPet({
       )}
       {inputType === "option" && (
         <div className="flex gap-3">
-         <label className="border-[1px] rounded-lg p-3 cursor-pointer font-medium text-neutral-500">
-          <input className="hidden" type="radio" name="dogGenre" id={option?.optionOne} />
-          {option?.optionOne}
-         </label>
-         <label className="border-[1px] rounded-lg p-3 cursor-pointer font-medium text-neutral-500">
-          <input className="hidden" type="radio" name="dogGenre" id={option?.optionTwo} />
-          {option?.optionTwo}
-         </label>
-          
+          <label onClick={() => setOptionSelected(1)} className={`${optionSelected === 1 ? "text-blue-500 border-blue-300" : "text-neutral-500"} text-xs cursor-pointer rounded-lg border-[1px] p-3 font-medium`}>
+            <input
+              className="hidden"
+              type="radio"
+              name="dogGenre"
+              id={option?.optionOne}
+            />
+            {option?.optionOne}
+          </label>
+          <label onClick={() => setOptionSelected(2)} className={`${optionSelected === 2 ? "text-blue-500 border-blue-300" : "text-neutral-500"} text-xs cursor-pointer rounded-lg border-[1px] p-3 font-medium`}>
+            <input
+              className="hidden"
+              type="radio"
+              name="dogGenre"
+              id={option?.optionTwo}
+            />
+            {option?.optionTwo}
+          </label>
         </div>
       )}
       <button
