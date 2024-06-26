@@ -5,12 +5,28 @@
 /* TEXT */
 
 h3 {
-    @apply text-xl font-semibold;
+  @apply text-xl font-semibold;
 }
-
 
 /* INPUT */
 input {
-   background-color: transparent;
-    outline: none;
+    @apply w-full; 
+  background-color: transparent;
+  outline: none;
+}
+
+.inputDataPet:focus-within {
+  @apply border-blue-400 shadow-sm shadow-blue-200;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
