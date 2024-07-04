@@ -16,9 +16,13 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
+    "@headlessui/react": "^2.1.1",
+    "@headlessui/tailwindcss": "^0.2.1",
     "@prisma/client": "^5.14.0",
+    "@remixicon/react": "^4.2.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-query": "^5.39.0",
+    "@tremor/react": "^3.17.4",
     "@trpc/client": "next",
     "@trpc/next": "next",
     "@trpc/react-query": "next",
